@@ -1,0 +1,27 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "Restaurant landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"Error in test command\"",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredait/restaurant.git"
+  },
+  "author": "jaredait",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaredait/restaurant/issues"
+  },
+  "homepage": "https://github.com/jaredait/restaurant#readme",
+  "devDependencies": {
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
