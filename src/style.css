@@ -1,0 +1,23 @@
+.main-image {
+    width: 100%;
+    height: auto;
+}
+
+.navbar{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(146, 93, 7, 0.883);
+    position: fixed;
+    top: 0;
+}
+
+.nav-bar-list{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.list-items{
+    margin: 0 1em 0;
+}

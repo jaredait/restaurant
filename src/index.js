@@ -1,3 +1,6 @@
-// RESTAURANT
+import { loadLandingImg, loadMenuBar } from "./page-load";
+import './style.css';
 
-console.log('It now works!!');
+// global scope
+document.body.appendChild(loadLandingImg());
+document.body.appendChild(loadMenuBar());
