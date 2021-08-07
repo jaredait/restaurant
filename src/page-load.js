@@ -1,16 +1,8 @@
-import landingImg from './img/restaurant-picture.jpg';
 import './style.css';
 
 // main image
 const loadLandingImg = () => {
-    const cafeImg = new Image();
-    cafeImg.src = landingImg;
-    cafeImg.classList.add('main-image');
-    
-    const divLandingImg = document.createElement('div');
-    divLandingImg.appendChild(cafeImg);
-
-    return divLandingImg;
+    document.body.classList.add('main-image');
 }
 
 // menu bar (nav bar)
@@ -20,7 +12,7 @@ const loadMenuBar = () => {
     const items = ['Home', 'Menu', 'Contact'];
 
     // Individual list items
-    for(let i = 0; i < items.length; i++){
+    for (let i = 0; i < items.length; i++) {
         let liValue = document.createElement('li');
         liValue.textContent = items[i];
         liValue.classList.add('list-items');
@@ -33,7 +25,29 @@ const loadMenuBar = () => {
     return divMenuBar;
 }
 
+// title div
+const loadTitle = () => {
+    const divTitleContainer = document.createElement('div');
+    const pTitle = document.createElement('p');
+
+    pTitle.textContent = 'CAFETERIA';
+    pTitle.classList.add('main-title');
+
+    divTitleContainer.classList.add('title-container');
+    divTitleContainer.appendChild(pTitle);
+    document.body.appendChild(divTitleContainer);
+}
+
+// loader
+const driverCode = () => {
+    loadLandingImg();
+    document.body.appendChild(loadMenuBar());
+    loadTitle();
+}
+
 export {
     loadLandingImg,
     loadMenuBar,
+    loadTitle,
+    driverCode,
 };

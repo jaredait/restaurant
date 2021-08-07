@@ -1,6 +1,5 @@
-import { loadLandingImg, loadMenuBar } from "./page-load";
+import { loadLandingImg, loadMenuBar, loadTitle, driverCode } from "./page-load";
 import './style.css';
 
 // global scope
-document.body.appendChild(loadLandingImg());
-document.body.appendChild(loadMenuBar());
+driverCode();
