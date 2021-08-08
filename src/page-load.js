@@ -115,12 +115,39 @@ const loadInfo = () => {
     document.body.appendChild(divContainer);
 }
 
+const loadFooter = () => {
+    const footer = document.createElement('footer');
+    const author = 'jaredait';
+    const email = 'jaredampudia@gmail.com';
+    const phone = '0991231231';
+
+    /*
+    const pAuthor = document.createElement('p');
+    pAuthor.textContent = author;
+
+    const aEmail = document.createElement('a');
+    aEmail.textContent = email;
+    aEmail.setAttribute('href', `mailto:${email}`);
+    aEmail.classList.add('a-links');
+
+    const pPhone = document.createElement('p');
+    pPhone.textContent = phone;
+
+    footer.append(pAuthor, aEmail, pPhone);
+    */
+    footer.textContent = `${author} | ${email} | ${phone}`;
+    footer.classList.add('footer-container');
+
+    document.body.appendChild(footer);
+}
+
 // loader
 const driverCode = () => {
     loadLandingImg();
     document.body.appendChild(loadMenuBar());
     loadTitle();
     loadInfo();
+    loadFooter();
 }
 
 export {
