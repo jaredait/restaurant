@@ -38,11 +38,89 @@ const loadTitle = () => {
     document.body.appendChild(divTitleContainer);
 }
 
+const loadDescription = () => {
+    const divContainer = document.createElement('div');
+    const pDesc = document.createElement('p');
+    const pTitle = document.createElement('p');
+
+    pTitle.textContent = 'About us';
+    pTitle.classList.add('info-style-title');
+
+    pDesc.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras enim dolor, sagittis nec fringilla eu, imperdiet non ipsum. Phasellus id laoreet tortor. Donec vel metus tincidunt, malesuada erat et, mollis dui. Etiam sit amet diam sollicitudin, bibendum ante sit amet, mattis urna.';
+    pDesc.classList.add('info-style-desc');
+
+    divContainer.appendChild(pTitle);
+    divContainer.appendChild(pDesc);
+    divContainer.classList.add('info-style');
+
+    return divContainer;
+}
+
+const loadSchedule = () => {
+    const divContainer = document.createElement('div');
+    const pDesc1 = document.createElement('p');
+    const pDesc2 = document.createElement('p');
+    const pDesc3 = document.createElement('p');
+    const pTitle = document.createElement('p');
+
+    pTitle.textContent = 'Hours';
+    pTitle.classList.add('info-style-title');
+
+    pDesc1.textContent = 'Monday - Friday: 07h00 - 22h00';
+    pDesc2.textContent = 'Saturday: 11h00 - 22h00';
+    pDesc3.textContent = 'Sunday: 11h00 - 23h00';
+
+    pDesc1.classList.add('info-style-desc');
+    pDesc2.classList.add('info-style-desc');
+    pDesc3.classList.add('info-style-desc');
+
+    divContainer.appendChild(pTitle);
+    divContainer.appendChild(pDesc1);
+    divContainer.appendChild(pDesc2);
+    divContainer.appendChild(pDesc3);
+    divContainer.classList.add('info-style');
+
+    return divContainer;
+}
+
+const loadLocation = () => {
+    const divContainer = document.createElement('div');
+    const pDesc = document.createElement('p');
+    const pTitle = document.createElement('p');
+
+    pTitle.textContent = 'Location';
+    pTitle.classList.add('info-style-title');
+
+    pDesc.textContent = '123 Forest Drive, Forestville, Maine';
+    pDesc.classList.add('info-style-desc');
+
+    divContainer.appendChild(pTitle);
+    divContainer.appendChild(pDesc);
+    divContainer.classList.add('info-style');
+
+    return divContainer;
+}
+
+const loadInfo = () => {
+    // create main div that'll contain all of the information
+    const divContainer = document.createElement('div');
+
+    divContainer.classList.add('info-container');
+
+    // load information
+    divContainer.appendChild(loadDescription());
+    divContainer.appendChild(loadSchedule());
+    divContainer.appendChild(loadLocation());
+
+    document.body.appendChild(divContainer);
+}
+
 // loader
 const driverCode = () => {
     loadLandingImg();
     document.body.appendChild(loadMenuBar());
     loadTitle();
+    loadInfo();
 }
 
 export {
