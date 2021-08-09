@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        pageLoad: './src/page-load.js',
+        pageLoad: './src/landing-page/page-load.js',
     },
     plugins: [
         new HtmlWebpackPlugin({

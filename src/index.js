@@ -1,5 +1,4 @@
-import { loadLandingImg, loadMenuBar, loadTitle, driverCode } from "./page-load";
-import './style.css';
+import { loadLandingImg, loadMenuBar, loadTitle, driverCode } from "./landing-page/page-load";
 
 // global scope
 driverCode();
