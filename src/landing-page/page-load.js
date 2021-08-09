@@ -1,5 +1,5 @@
 import './style.css';
-
+/*
 // main image
 const loadLandingImg = () => {
     document.body.classList.add('main-image');
@@ -24,7 +24,7 @@ const loadMenuBar = () => {
     divMenuBar.classList.add('navbar');
     return divMenuBar;
 }
-
+*/
 // title div
 const loadTitle = () => {
     const divTitleContainer = document.createElement('div');
@@ -143,16 +143,12 @@ const loadFooter = () => {
 
 // loader
 const driverCode = () => {
-    loadLandingImg();
-    document.body.appendChild(loadMenuBar());
     loadTitle();
     loadInfo();
     loadFooter();
 }
 
 export {
-    loadLandingImg,
-    loadMenuBar,
     loadTitle,
     driverCode,
 };
