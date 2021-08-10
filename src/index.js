@@ -1,4 +1,4 @@
-import { loadLandingPage, removeLandingNodes } from "./landing-page/page-load";
+import { loadLandingPage } from "./landing-page/page-load";
 import './style.css';
 
 // main image
@@ -15,10 +15,14 @@ const loadMenuBar = () => {
     const liHome = document.createElement('li');
     liHome.textContent = 'Home';
     liHome.classList.add('list-items');
-    // event listener to "reload" the home page
+    // event listener to "reloads" the home page
     liHome.addEventListener('click', () =>{
-        removeLandingNodes();
-        loadLandingPage();
+        // verificar que el nodo divLanding se encuentre en el body, sino, solo 
+        // hacer un append
+        if(document.body.contains(divLanding)){
+            document.body.removeChild(divLanding);
+        }
+        document.body.appendChild(divLanding);
     });
     
     // menu
@@ -38,12 +42,13 @@ const loadMenuBar = () => {
     return divMenuBar;
 }
 
+// **************** GLOBAL SCOPE *******************
+
 // load the landing image and navbar
 loadLandingImg();
 document.body.appendChild(loadMenuBar());
 
-// global scope
-loadLandingPage();
+// divs that have their corresponding module
+const divLanding = loadLandingPage();
 
-// retornar las referencias a los nodos del DOM, con esto, es posible remover
-// child con el metodo document.body.removeChild.
+document.body.appendChild(divLanding);

@@ -30,3 +30,7 @@
 .list-items{
     margin: 0 1em 0;
 }
+
+.list-items:hover{
+    color: black;
+}

@@ -39,10 +39,8 @@ body, html{
     margin: 1em;
     font-size: 1.5em;
     font-family: var(--main-font);
-    color: white;
     font-weight: 400;
     height: auto;
-    width: fit-content;
     max-width: 60%;
 }
 

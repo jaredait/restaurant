@@ -76,7 +76,6 @@ const loadLocation = () => {
     return divContainer;
 }
 
-
 const loadFooter = () => {
     const footer = document.createElement('footer');
     const author = 'jaredait';
@@ -102,35 +101,33 @@ const loadFooter = () => {
 
     return footer;
 }
-// loader
-const loadLandingPage = () => {
-    const titleContainer = loadTitle();
-    const divContainer = document.createElement('div'); // this div contains all of the information
-    const description = loadDescription();
-    const schedule = loadSchedule();
-    const location = loadLocation();
-    const foot = loadFooter();
-    
-    document.body.appendChild(titleContainer);
+
+const loadInfo = () => {
+    // create main div that'll contain all of the information
+    const divContainer = document.createElement('div');
+
+    divContainer.classList.add('info-container');
 
     // load information
-    divContainer.classList.add('info-container');
-    divContainer.appendChild(description);
-    divContainer.appendChild(schedule);
-    divContainer.appendChild(location);
-    document.body.append(divContainer);
+    divContainer.appendChild(loadDescription());
+    divContainer.appendChild(loadSchedule());
+    divContainer.appendChild(loadLocation());
 
-    document.body.append(foot);
+    return divContainer;
 }
 
-// node remover
-function removeLandingNodes(nodeArray){
-    nodeArray.forEach(element => {
-        document.body.removeChild(element)
-    });
+// loader
+const loadLandingPage = () => {
+    const divLandingContainer = document.createElement('div');
+    const titleContainer = loadTitle();
+    const divContainer = loadInfo(); // this div contains all of the information
+    const foot = loadFooter();
+    
+    divLandingContainer.append(titleContainer, divContainer, foot);
+
+    return divLandingContainer;
 }
 
 export {
     loadLandingPage,
-    removeLandingNodes,
 };
