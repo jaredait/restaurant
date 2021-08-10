@@ -10,7 +10,7 @@ const loadTitle = () => {
 
     divTitleContainer.classList.add('title-container');
     divTitleContainer.appendChild(pTitle);
-    document.body.appendChild(divTitleContainer);
+    return divTitleContainer;
 }
 
 const loadDescription = () => {
@@ -76,19 +76,6 @@ const loadLocation = () => {
     return divContainer;
 }
 
-const loadInfo = () => {
-    // create main div that'll contain all of the information
-    const divContainer = document.createElement('div');
-
-    divContainer.classList.add('info-container');
-
-    // load information
-    divContainer.appendChild(loadDescription());
-    divContainer.appendChild(loadSchedule());
-    divContainer.appendChild(loadLocation());
-
-    document.body.appendChild(divContainer);
-}
 
 const loadFooter = () => {
     const footer = document.createElement('footer');
@@ -113,15 +100,37 @@ const loadFooter = () => {
     footer.textContent = `${author} | ${email} | ${phone}`;
     footer.classList.add('footer-container');
 
-    document.body.appendChild(footer);
+    return footer;
 }
 // loader
 const loadLandingPage = () => {
-    loadTitle();
-    loadInfo();
-    loadFooter();
+    const titleContainer = loadTitle();
+    const divContainer = document.createElement('div'); // this div contains all of the information
+    const description = loadDescription();
+    const schedule = loadSchedule();
+    const location = loadLocation();
+    const foot = loadFooter();
+    
+    document.body.appendChild(titleContainer);
+
+    // load information
+    divContainer.classList.add('info-container');
+    divContainer.appendChild(description);
+    divContainer.appendChild(schedule);
+    divContainer.appendChild(location);
+    document.body.append(divContainer);
+
+    document.body.append(foot);
+}
+
+// node remover
+function removeLandingNodes(nodeArray){
+    nodeArray.forEach(element => {
+        document.body.removeChild(element)
+    });
 }
 
 export {
     loadLandingPage,
+    removeLandingNodes,
 };

@@ -1,4 +1,4 @@
-import { loadLandingPage } from "./landing-page/page-load";
+import { loadLandingPage, removeLandingNodes } from "./landing-page/page-load";
 import './style.css';
 
 // main image
@@ -15,8 +15,11 @@ const loadMenuBar = () => {
     const liHome = document.createElement('li');
     liHome.textContent = 'Home';
     liHome.classList.add('list-items');
-    // add here an event listener and display the home page
-    liHome.addEventListener('click', loadLandingPage);
+    // event listener to "reload" the home page
+    liHome.addEventListener('click', () =>{
+        removeLandingNodes();
+        loadLandingPage();
+    });
     
     // menu
     const liMenu = document.createElement('li');
@@ -35,7 +38,6 @@ const loadMenuBar = () => {
     return divMenuBar;
 }
 
-
 // load the landing image and navbar
 loadLandingImg();
 document.body.appendChild(loadMenuBar());
@@ -43,3 +45,5 @@ document.body.appendChild(loadMenuBar());
 // global scope
 loadLandingPage();
 
+// retornar las referencias a los nodos del DOM, con esto, es posible remover
+// child con el metodo document.body.removeChild.
