@@ -25,6 +25,7 @@ body, html{
 
 /* Information style */
 .info-container {
+    padding-top: 1em;
     width: 100%;
     height: auto;
     display: grid;
@@ -33,15 +34,22 @@ body, html{
     "g2"
     "g3";
     background-color: rgba(0, 0, 0, 0.671);
+    align-items: center;
+    justify-content: center;
 }
 
 .info-style {
-    margin: 1em;
+    margin: 1em 3em 1em 3em;
     font-size: 1.5em;
     font-family: var(--main-font);
     font-weight: 400;
     height: auto;
-    max-width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 6em 2em 6em;
+    border-bottom: solid #000000 3px;
 }
 
 .info-style-title {
