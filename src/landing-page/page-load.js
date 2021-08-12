@@ -124,6 +124,7 @@ const loadLandingPage = () => {
     const foot = loadFooter();
     
     divLandingContainer.append(titleContainer, divContainer, foot);
+    divLandingContainer.classList.add('displayed');
 
     return divLandingContainer;
 }

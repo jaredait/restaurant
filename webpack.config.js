@@ -6,6 +6,7 @@ module.exports = {
     entry: {
         index: './src/index.js',
         pageLoad: './src/landing-page/page-load.js',
+        menuPage: './src/menu-page/menu-page.js',
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,4 +1,5 @@
 import { loadLandingPage } from "./landing-page/page-load";
+import { loadDemo } from './menu-page/menu-page.js';
 import './style.css';
 
 // main image
@@ -16,19 +17,19 @@ const loadMenuBar = () => {
     liHome.textContent = 'Home';
     liHome.classList.add('list-items');
     // event listener to "reloads" the home page
-    liHome.addEventListener('click', () =>{
-        // verificar que el nodo divLanding se encuentre en el body, sino, solo 
-        // hacer un append
-        if(document.body.contains(divLanding)){
-            document.body.removeChild(divLanding);
-        }
-        document.body.appendChild(divLanding);
-    });
-    
+    liHome.addEventListener('click', displayHome);
+
     // menu
     const liMenu = document.createElement('li');
     liMenu.textContent = 'Menu';
     liMenu.classList.add('list-items');
+
+    // event listener
+    liMenu.addEventListener('click', () => {
+        document.body.removeChild(divLanding);
+        document.body.appendChild(divMenu);
+    });
+
 
     //contact
     const liContact = document.createElement('li');
@@ -42,6 +43,11 @@ const loadMenuBar = () => {
     return divMenuBar;
 }
 
+const displayHome = () => {
+    document.body.removeChild(document.body.querySelector('.displayed'));
+    document.body.appendChild(divLanding);
+}
+
 // **************** GLOBAL SCOPE *******************
 
 // load the landing image and navbar
@@ -50,5 +56,6 @@ document.body.appendChild(loadMenuBar());
 
 // divs that have their corresponding module
 const divLanding = loadLandingPage();
+const divMenu = loadDemo();
 
 document.body.appendChild(divLanding);
