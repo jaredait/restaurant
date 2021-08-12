@@ -16,3 +16,52 @@
     width: 40vw;
     background-color: var(--main-brown);
 }
+
+/* menu items card classes */
+.menu-list {
+    padding: 1em;
+    margin: 1em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    color: #ffffff;
+    font-family: var(--main-font);
+}
+
+.item-card{
+    padding: 0;
+    margin: 0;
+    width: 60vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+    "img info";
+};
+
+.card-img {
+    grid-area: img;
+}
+
+.card-info {
+    grid-area: info;
+}
+/*
+.card-name {
+    grid-area: name;
+}
+
+.card-desc {
+    grid-area: desc;
+}
+
+.card-price {
+    grid-area: price;
+}
+*/
+.med-img {
+    display: inline-block;
+    max-width: 50%;
+    height: auto;
+}
