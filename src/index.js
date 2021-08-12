@@ -1,5 +1,5 @@
 import { loadLandingPage } from "./landing-page/page-load";
-import { loadDemo } from './menu-page/menu-page.js';
+import { loadMenuPage } from './menu-page/menu-page.js';
 import './style.css';
 
 // main image
@@ -23,12 +23,8 @@ const loadMenuBar = () => {
     const liMenu = document.createElement('li');
     liMenu.textContent = 'Menu';
     liMenu.classList.add('list-items');
-
     // event listener
-    liMenu.addEventListener('click', () => {
-        document.body.removeChild(divLanding);
-        document.body.appendChild(divMenu);
-    });
+    liMenu.addEventListener('click', displayMenu);
 
 
     //contact
@@ -48,6 +44,11 @@ const displayHome = () => {
     document.body.appendChild(divLanding);
 }
 
+const displayMenu = () => {
+    document.body.removeChild(document.body.querySelector('.displayed'));
+    document.body.appendChild(divMenu);
+}
+
 // **************** GLOBAL SCOPE *******************
 
 // load the landing image and navbar
@@ -56,6 +57,6 @@ document.body.appendChild(loadMenuBar());
 
 // divs that have their corresponding module
 const divLanding = loadLandingPage();
-const divMenu = loadDemo();
+const divMenu = loadMenuPage();
 
-document.body.appendChild(divLanding);
+document.body.appendChild(divMenu);
