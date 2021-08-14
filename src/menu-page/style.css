@@ -27,6 +27,8 @@
     grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     color: #ffffff;
     font-family: var(--main-font);
+    gap: 10vh;
+
 }
 
 .item-card{
@@ -42,26 +44,16 @@
 
 .card-img {
     grid-area: img;
+    max-width: 500px;
 }
 
 .card-info {
     grid-area: info;
-}
-/*
-.card-name {
-    grid-area: name;
+    padding: 3em;
 }
 
-.card-desc {
-    grid-area: desc;
-}
-
-.card-price {
-    grid-area: price;
-}
-*/
 .med-img {
     display: inline-block;
-    max-width: 50%;
+    max-width: 300px;
     height: auto;
 }

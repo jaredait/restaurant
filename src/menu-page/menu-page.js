@@ -1,5 +1,7 @@
 import './style.css';
 import cafeImg from './../img/cafe.jpg';
+import restaurantPic from './../img/restaurant-picture.jpg';
+import cafePic from './../img/cafe-picture.jpg';
 
 // object that contains the fields that'll be displayed on the menu page
 let menuItem = (name, description, imgUrl, price) => {
@@ -24,9 +26,9 @@ let menuItem = (name, description, imgUrl, price) => {
 
 const getMenuItems = () => {
     return [
-        menuItem('first', 'first desc', cafeImg, '12.50'),
-        menuItem('sec', 'sec desc', cafeImg, '22.50'),
-        menuItem('third', 'third desc', cafeImg, '32.50'),
+        menuItem('First item', 'This is the first description', cafeImg, '12.50'),
+        menuItem('Second item', 'This is the second description', restaurantPic, '22.50'),
+        menuItem('Third item', 'This is the third description', cafePic, '32.50'),
     ];
 };
 
@@ -48,7 +50,7 @@ const getItemCard = (item) => {
     pDesc.textContent = item.getDesc();
     pDesc.classList.add('card-desc');
 
-    pPrice.textContent = item.getPrice();
+    pPrice.textContent = "$ " + item.getPrice();
     pPrice.classList.add('card-price');
 
     cardContainer.classList.add('item-card');
