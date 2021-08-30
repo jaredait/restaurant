@@ -15,12 +15,13 @@
     height: 3px;
     width: 40vw;
     background-color: var(--main-brown);
+    border: 0px solid var(--main-brown);
 }
 
 /* menu items card classes */
 .menu-list {
     padding: 1em;
-    margin: 1em;
+    margin: 0;
     display: grid;
     justify-content: center;
     align-items: center;

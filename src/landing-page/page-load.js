@@ -76,32 +76,6 @@ const loadLocation = () => {
     return divContainer;
 }
 
-const loadFooter = () => {
-    const footer = document.createElement('footer');
-    const author = 'jaredait';
-    const email = 'jaredampudia@gmail.com';
-    const phone = '0991231231';
-
-    /*
-    const pAuthor = document.createElement('p');
-    pAuthor.textContent = author;
-
-    const aEmail = document.createElement('a');
-    aEmail.textContent = email;
-    aEmail.setAttribute('href', `mailto:${email}`);
-    aEmail.classList.add('a-links');
-
-    const pPhone = document.createElement('p');
-    pPhone.textContent = phone;
-
-    footer.append(pAuthor, aEmail, pPhone);
-    */
-    footer.textContent = `${author} | ${email} | ${phone}`;
-    footer.classList.add('footer-container');
-
-    return footer;
-}
-
 const loadInfo = () => {
     // create main div that'll contain all of the information
     const divContainer = document.createElement('div');
@@ -121,9 +95,8 @@ const loadLandingPage = () => {
     const divLandingContainer = document.createElement('div');
     const titleContainer = loadTitle();
     const divContainer = loadInfo(); // this div contains all of the information
-    const foot = loadFooter();
     
-    divLandingContainer.append(titleContainer, divContainer, foot);
+    divLandingContainer.append(titleContainer, divContainer);
     divLandingContainer.classList.add('displayed');
 
     return divLandingContainer;
